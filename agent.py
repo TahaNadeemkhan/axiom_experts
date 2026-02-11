@@ -5,10 +5,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("Openai_api_key")
 
 
 provider = OpenAI(api_key=api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/") 
+
 
 
 model = OpenAIChatCompletionsModel(model="gemini-2.5-flash", openai_client=provider)
