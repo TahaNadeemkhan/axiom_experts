@@ -14,7 +14,7 @@ provider = OpenAI(api_key=api_key, base_url="https://generativelanguage.googleap
 
 
 
-model = OpenAIChatCompletionsModel(model="gemini-2.5-flash", openai_client=provider)
+model = OpenAIChatCompletionsModel(model="gemini-2.5", openai_client=provider)
 
 
 scraping_agent = Agent(
