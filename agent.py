@@ -8,7 +8,9 @@ load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
 
-provider = AsyncOpenAI(api_key=api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/") 
+# provider = AsyncOpenAI(api_key=api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/") 
+# I think we should use groq
+provider = AsyncOpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1") 
 
 
 model = OpenAIChatCompletionsModel(model="gemini-2.5-flash", openai_client=provider)
