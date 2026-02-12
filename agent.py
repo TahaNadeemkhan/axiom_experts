@@ -1,24 +1,24 @@
 from agents import Agent, Runner, function_tool, OpenAIChatCompletionsModel
-from openai import AsyncOpenAI
+from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 print("taha nadeem")
-api_key = os.getenv("Openai_api_key")
+api_key = os.getenv("GEMINI_API_KEY")
 
 
-# provider = AsyncOpenAI(api_key=api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/") 
-# I think we should use groq
-provider = AsyncOpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1") 
+
+provider = OpenAI(api_key=api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/") 
 
 
-model = OpenAIChatCompletionsModel(model="gemini-2.5-flash", openai_client=provider)
+
+model = OpenAIChatCompletionsModel(model="gemini-2.5", openai_client=provider)
 
 
 scraping_agent = Agent(
     name="ScraperAgent",
-    instructions="You are an expert data extraction agent. Extract school events and fees from the provided text.",
+    instructions="You are a Cyber Security Expert.",
     model=model
 )
 
