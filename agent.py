@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-print("Ashhad")
+print("Ashhad khan 1")
 
 api_key = os.getenv("GEMINI_API_KEY")
 
